@@ -21,9 +21,11 @@
   <body style="margin: 0; overflow: hidden">
     <a-scene
       vr-mode-ui="enabled: false"
-      arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false"
+      arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: true;"
       renderer="antialias: true; alpha: true"
     >
+    
+    <a-anchor>
       <a-camera gps-new-camera="gpsMinDistance: 5"></a-camera>
       <a-camera gps-camera rotation-reader></a-camera>
       <a-entity
