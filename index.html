@@ -1,61 +1,9 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>AR.js A-Frame Location-based</title>
-    <!-- A-Frame itself -->
-    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+<!-- import aframe and then ar.js with image tracking / location based features -->
+<script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
+<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
 
-    <!-- Pure three.js code that the A-Frame components use for location-based AR -->
-
-    <!-- AR.js A-Frame components -->
-    <script
-      type="text/javascript"
-      src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"
-    ></script>
-
-    <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-    <script>
-// import this on your HTML
-window.addEventListener('load', () => {
-  const camera = document.querySelector('[camera]');
-  const marker = document.querySelector('a-marker');
-  let check;
-
-  marker.addEventListener('markerFound', () => {
-      let cameraPosition = camera.object3D.position;
-      let markerPosition = marker.object3D.position;
-      let distance = cameraPosition.distanceTo(markerPosition)
-
-      check = setInterval(() => {
-          cameraPosition = camera.object3D.position;
-          markerPosition = marker.object3D.position;
-          distance = cameraPosition.distanceTo(markerPosition)
-
-          // do what you want with the distance:
-          console.log(distance);
-      }, 100);
-  });
-
-  marker.addEventListener('markerLost', () => {
-    clearInterval(check);
-  })
-})
-window.addEventListener("arjs-nft-loaded", (event) => {
-
-  const { id, marker } = event.detail;
-
-  marker.addEventListener("markerFound", () => {
-    console.log("markerFound", id);
-  });
-
-  marker.addEventListener("markerLost", () => {
-    console.log("markerLost", id);
-  });
-
-});
-    </script>
-  </head>
+<!-- style for the loader -->
 <style>
   .arjs-loader {
     height: 100%;
@@ -77,66 +25,39 @@ window.addEventListener("arjs-nft-loaded", (event) => {
   }
 </style>
 
-<div class="arjs-loader">
-  <div>Loading, please wait...</div>
-</div>
+<body style="margin: 0px; overflow: hidden">
+  <!-- minimal loader shown until image descriptors are loaded. Loading may take a while according to the device computational power -->
+  <div class="arjs-loader">
+    <div>Loading, please wait...</div>
+  </div>
 
-  <body style="margin: 0; overflow: hidden">
-    <a-scene
-      vr-mode-ui="enabled: false"
-      arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: true;"
-      renderer="antialias: true; alpha: true"
+  <!-- a-frame scene -->
+  <a-scene
+    vr-mode-ui="enabled: false;"
+    renderer="logarithmicDepthBuffer: true;"
+    embedded
+    arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
+  >
+    <!-- a-nft is the anchor that defines an Image Tracking entity -->
+    <!-- on 'url' use the path to the Image Descriptors created before. -->
+    <!-- the path should end with the name without the extension e.g. if file is 'pinball.fset' the path should end with 'pinball' -->
+    <a-nft
+      type="nft"
+      url="./assets/pronghorn_statue"
+      smooth="true"
+      smoothCount="10"
+      smoothTolerance=".01"
+      smoothThreshold="5"
     >
-    
-<!--     <a-anchor>
-      <a-camera gps-new-camera="gpsMinDistance: 5"></a-camera>
-      <a-camera gps-camera rotation-reader></a-camera>
+      <!-- as a child of the a-nft entity, you can define the content to show. here's a GLTF model entity -->
       <a-entity
-        material="color: red"
-        geometry="primitive: box"
-        gps-new-entity-place="longitude: 49.6776655; latitude: -112.8594465;"
-        scale="10 10 10"
-      ></a-entity>
-
-      <a-entity
-        gltf-model="./assets/magnemite/scene.gltf"
-        rotation="0 180 0"
-        scale="0.15 0.15 0.15"
-        gps-entity-place="longitude: 49.6776655; latitude: -112.8594465;"
-      />
-    </a-scene>
-  </a-anchor> -->
-
-
-  
-    <!-- a-frame scene -->
-    <a-scene
-      vr-mode-ui="enabled: false;"
-      renderer="logarithmicDepthBuffer: true;"
-      embedded
-      arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
-    >
-      <!-- a-nft is the anchor that defines an Image Tracking entity -->
-      <!-- on 'url' use the path to the Image Descriptors created before. -->
-      <!-- the path should end with the name without the extension e.g. if file is 'pinball.fset' the path should end with 'pinball' -->
-      <a-nft
-        type="nft"
-        url="./assets/pronghorn_statue"
-        smooth="true"
-        smoothCount="10"
-        smoothTolerance=".01"
-        smoothThreshold="5"
+        gltf-model="./assets/Kevin.glb"
+        scale="5 5 5"
+        position="50 150 0"
       >
-        <!-- as a child of the a-nft entity, you can define the content to show. here's a GLTF model entity -->
-        <a-entity
-          gltf-model="./assets/Kevin.glb"
-          scale="5 5 5"
-          position="50 150 0"
-        >
-        </a-entity>
-      </a-nft>
-      <!-- static camera that moves according to the device movemenents -->
-      <a-entity camera></a-entity>
-    </a-scene>
-  </body>
-</html>
+      </a-entity>
+    </a-nft>
+    <!-- static camera that moves according to the device movemenents -->
+    <a-entity camera></a-entity>
+  </a-scene>
+</body>
