@@ -1,0 +1,27 @@
+/* Debug AR.js CSS */
+.debug {
+    border: 2px solid red;
+}
+
+.debug * {
+    border: 1px dashed blue;
+}
+
+.debug .arjs-loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 1.5em;
+    text-align: center;
+    z-index: 9999;
+}
+
+.debug .arjs-video {
+    border: 2px solid green;
+}
+
+.debug .arjs-marker {
+    border: 2px solid yellow;
+}
