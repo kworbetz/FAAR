@@ -73,11 +73,16 @@ document.addEventListener("DOMContentLoaded", () => {
     downloadButton.addEventListener("click", () => {
       const link = document.createElement("a");
       link.href = nftImage.src;
-      link.download =
-        "https://drive.google.com/file/d/1YdRAPJHmukU8T5nx4DBpkVTynXBbnycq/view?usp=sharing";
-      link.click();
+      link.download = link.click();
     });
 
     document.body.appendChild(downloadButton);
+  }
+});
+
+document.querySelector("a-scene").addEventListener("click", function (evt) {
+  if (evt.target.classList.contains("clickable")) {
+    window.location.href =
+      "https://drive.google.com/file/d/1YdRAPJHmukU8T5nx4DBpkVTynXBbnycq/view?usp=sharing";
   }
 });
