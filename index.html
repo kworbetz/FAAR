@@ -1,121 +1,66 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>AR.js Example</title>
-
-    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
     <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gps-entity-place.js"></script>
+    <script src="/js/script.js"></script>
   </head>
 
   <body style="margin: 0; overflow: hidden">
     <a-scene
-      vr-mode-ui="enabled: false;"
-      loading-screen="enabled: false;"
       renderer="logarithmicDepthBuffer: true;"
-      arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
-      id="scene"
       embedded
-      gesture-detector
-    gps-camera
-      >
-        <img id="cara" src="assets/cara.png" />
-        <img id="darcy" src="assets/darcy.png" />
-        <img id="siobhan" src="assets/siobhan.png" />
-        <a-assets-items
-          id="kevin-pronghorn-asset"
-          src="assets/asset.glb"
-        ></a-assets-items>
+      loading-screen="enabled: true;"
+      arjs="trackingMethod: best;sourceType: webcam; debugUIEnabled: true;"
+      inspector="url: https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js"
+      xr-mode-ui="enabled: false;"
+      device-orientation-permission-ui="enabled: false;"
+    >
+      <a-assets>
+        <a-asset-item
+          id="animated-asset"
+          src="assets/Kevyn_2.glb"
+        ></a-asset-item>
+        <a-assets-items id="kevyn" Src="assets/asset.glb"></a-assets-items>
+      </a-assets>
 
-        <a-assets-items id="cara-asset" src="assets/cara.glb"></a-assets-items>
-        <a-assets-items
-          id="darcy-asset"
-          src="assets/darcy.glb"
-        ></a-assets-items>
-      </a->
+      <a-entity
+        id="kevyn"
+        look-at="[gps-camera]"
+        animation-mixer="loop: repeat"
+        gltf-model="#kevyn"
+        scale="1 1 1"
+        position="0 0 0"
+        gps-entity-place="latitude: 49.67917246132327; longitude: -112.86020135876244;"
+      ></a-entity>
+      <a-entity
+        look-at="[gps-camera]"
+        animation-mixer="loop: repeat"
+        gltf-model="#kevyn"
+        scale="1 1 1"
+        position="0 0 0"
+        gps-entity-place="latitude: 49.679131675437716; longitude: -112.86014771458214;"
+      ></a-entity>
+      <a-entity
+        look-at="[gps-camera]"
+        animation-mixer="loop: repeat"
+        gltf-model="#kevyn"
+        scale="1 1 1"
+        gps-entity-place="latitude: 49.67912907208216; longitude: -112.86012089249199;"
+      ></a-entity>
+      <a-entity
+        look-at="[gps-camera]"
+        animation-mixer="loop: repeat"
+        gltf-model="#kevyn"
+        scale="1 1 1"
+        gps-entity-place="latitude: 49.679102170733216; longitude: -112.86013162132805;"
+      ></a-entity>
 
-      <a-nft
-        type="nft"
-        url="assets/cara"
-        smooth="true"
-        smoothCount="10"
-        smoothTolerance="0.01"
-        smoothThreshold="5"
-      >
-        <a-entity
-          look-at="[gps-camera]"
-          gps-entity-place="latitude: 49.6777049; longitude: -112.8599162;"
-          gltf-model="#cara-asset"
-          scale="1 1 1"
-          position="0 0 0"
-        ></a-entity>
-      </a-nft>
-
-      <a-nft
-        type="nft"
-        url="assets/darcy"
-        smooth="true"
-        smoothCount="10"
-        smoothTolerance="0.01"
-        smoothThreshold="5"
-      >
-        <a-entity
-          gps-entity-place="latitude: 49.6777049; longitude: -112.8599162;"
-          look-at="[gps-camera]"
-          gltf-model="#darcy-asset"
-          scale="1 1 1"
-          position="0 0 0"
-        ></a-entity>
-      </a-nft>
-
-      <a-nft
-        type="nft"
-        url="assets/siobhan"
-        smooth="true"
-        smoothCount="10"
-        smoothTolerance="0.01"
-        smoothThreshold="5"
-      >
-        <a-entity
-          gps-entity-place="latitude: 49.6777049; longitude: -112.8599162;"
-          gltf-model="#siobhan-asset"
-          look-at="[gps-camera]"
-          scale="1 1 1"
-          position="0 0 0"
-        ></a-entity>
-      </a-nft>
-
-      <a-marker
-        id="kevin-pronghorn-asset"
-        type="pattern"
-        preset="custom"
-        url="assets/marker.patt"
-        raycaster="objects: .clickable"
-        emitevents="true"
-        cursor="fuse: false; rayOrigin: mouse;"
-        id="markerA"
-      >
-        <a-entity
-          id="bowser-model"
-          scale="1 1 1"
-          animation-mixer="loop: repeat"
-          gltf-model="#kevin-pronghorn-asset"
-          class="clickable"
-          gesture-handler
-        ></a-entity>
-      </a-marker>
-
-      <a-entity gps-new-camera></a-entity>
+      <a-camera gps-camera rotation-reader></a-camera>
     </a-scene>
-
-    <footer>
-      <script src="./js/script.js"></script>
-      
-
-      <link rel="stylesheet" type="text/css" href="/css/style.css" />
-    </footer>
   </body>
 </html>

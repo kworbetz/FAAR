@@ -1,7 +1,11 @@
 // Get the latitude, longitude, altitude, and angle of the device
-let isdebug = true;
+let debug = true;
 
-if (isdebug) {
+if (debug) {
+  console.log("Script loaded");
+}
+
+if (debug) {
   document.addEventListener("DOMContentLoaded", () => {
     const latElement = document.createElement("div");
     const lonElement = document.createElement("div");
@@ -60,11 +64,6 @@ if (isdebug) {
       model.addEventListener("loaded", () => {
         console.log(`Model loaded: ${model.getAttribute("src")}`);
       });
-
-      const nft = document.querySelector("a-nft");
-      nft.addEventListener("markerFound", () => {
-        console.log("Marker found");
-      });
     });
   });
 }
@@ -91,3 +90,31 @@ document.addEventListener("DOMContentLoaded", async () => {
     );
   });
 });
+
+window.onload = () => {
+  let testEntityAdded = false;
+  console.log("GPS Debug script loaded");
+  const el = document.querySelector("[gps-new-camera]");
+
+  el.addEventListener("gps-camera-update-position", (e) => {
+    if (!testEntityAdded) {
+      alert(
+        `Got first GPS position: lon ${e.detail.position.longitude} lat ${e.detail.position.latitude}`
+      );
+      // Add a box to the north of the initial GPS position
+      const entity = document.createElement("a-box");
+      entity.setAttribute("scale", {
+        x: 20,
+        y: 20,
+        z: 20,
+      });
+      entity.setAttribute("material", { color: "red" });
+      entity.setAttribute("gps-new-entity-place", {
+        latitude: e.detail.position.latitude + 0.001,
+        longitude: e.detail.position.longitude,
+      });
+      document.querySelector("a-scene").appendChild(entity);
+    }
+    testEntityAdded = true;
+  });
+};

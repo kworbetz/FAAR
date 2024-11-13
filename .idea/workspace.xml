@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="36a5132d-e0b1-4541-b77a-aaf3ccea68a3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/assets/asset.glb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/cara.glb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/cara.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/cara.zft" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/darcy.glb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/darcy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/darcy.zft" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/magnemite/scene.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/magnemite/scene.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/magnemite/textures/blinn2_baseColor.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/marker.patt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/program-anchor 1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/program-anchor.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/pronghorn_statue.fset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/pronghorn_statue.fset3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/pronghorn_statue.iset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/pronghorn_statue.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/pronghorn_statue.zft" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/siobhan.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/siobhan.zft" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/script.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="package.json" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2oiQjK1ywNez9sZZJ9w2l2H6Lql" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Node.js.script.js.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Kevyn\Documents\uLethbridge\Year 4\Applied Studies\FAAR\js" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-WS-243.21565.180" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="36a5132d-e0b1-4541-b77a-aaf3ccea68a3" name="Changes" comment="" />
+      <created>1731350051029</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1731350051029</updated>
+      <workItem from="1731350052264" duration="458000" />
+      <workItem from="1731441796181" duration="1789000" />
+      <workItem from="1731474334476" duration="19000" />
+      <workItem from="1731526808871" duration="2763000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

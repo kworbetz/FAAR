@@ -1,0 +1,171 @@
+{
+    "info": {
+      "generator": "aero2",
+      "version": "100.0"
+    },
+    "model": {
+      "class": "aero::Model",
+      "properties": {
+        "assetLibrary": {
+          "class": "aero::AssetLibrary",
+          "properties": {
+            "assetReferences": [
+              {
+                "class": "aero::AssetReference",
+                "id": "DC5DF282-AED0-423D-8838-9C6765FC0BAC",
+                "properties": {
+                  "automaticUnregistration": true,
+                  "relativePath": "assets\\Kevyn_2.glb"
+                },
+                "version": "1.0"
+              }
+            ]
+          },
+          "version": "1.0"
+        },
+        "behaviors": [
+          {
+            "action": {
+              "name": "spin",
+              "next": {
+                "name": "bounce",
+                "next": {
+                  "center": "camera",
+                  "infinite": true,
+                  "name": "orbit",
+                  "subject": "025B00C9-A329-4EB5-9343-2057D18DB303",
+                  "uuid": "I784VSTJ-YB5H-B3JD-JCP6-HM2OTBUFSH1N"
+                },
+                "subject": "025B00C9-A329-4EB5-9343-2057D18DB303",
+                "uuid": "PWDG3A9K-4AUB-NXET-AI1N-TMC4ITKKJO9F"
+              },
+              "subject": "025B00C9-A329-4EB5-9343-2057D18DB303",
+              "uuid": "BZAY7A2O-X0T0-XFSX-S1PT-OTVPEFP1RW9C"
+            },
+            "trigger": {
+              "name": "sceneStart",
+              "uuid": "ZZXPYW5V-3XVL-OQRH-O9VL-V9KPRZXHSF8H"
+            }
+          }
+        ],
+        "modelExtensions": [
+          {
+            "class": "aero::PublishData",
+            "properties": {
+              "status": "PUBLISH_OUT_OF_SYNC"
+            },
+            "version": "1.0"
+          },
+          {
+            "class": "aero::ModelSettings",
+            "version": "1.0"
+          }
+        ],
+        "sceneGraph": {
+          "class": "aero::SceneGraph",
+          "id": "EFFE6FA1-2E4F-473F-AB9A-4661E90E267F",
+          "properties": {
+            "scenes": [
+              {
+                "class": "aero::Scene",
+                "id": "1BC57B25-214B-4891-835A-9DD299770CE0",
+                "properties": {
+                  "anchor": {
+                    "class": "aero::ArPlaneAnchor",
+                    "constructionArgs": {
+                      "class": "aero::ArPlaneAnchorConstructionArgs",
+                      "properties": {
+                        "alignmentFlags": [
+                          "fHorizontal"
+                        ],
+                        "contentAlignment": "alignUpOnAnchorNormal"
+                      },
+                      "version": "1.0"
+                    },
+                    "id": "F42C9DE4-F789-4F29-9457-0DAFE93F377C",
+                    "version": "1.0"
+                  },
+                  "name": "Default Scene",
+                  "rootNode": {
+                    "class": "aero::Node3D",
+                    "id": "BA7C596C-A0EF-4BBC-BC53-BFC0952357B8",
+                    "properties": {
+                      "children": [
+                        {
+                          "class": "aero::Node3D",
+                          "id": "025B00C9-A329-4EB5-9343-2057D18DB303",
+                          "properties": {
+                            "collapsed": true,
+                            "components": [
+                              {
+                                "class": "aero::FileBasedGeometryComponent",
+                                "id": "14833869-0F09-4DAA-A9A2-7A8A89C3DBC2",
+                                "properties": {
+                                  "assetReference": {
+                                    "$reference": "DC5DF282-AED0-423D-8838-9C6765FC0BAC",
+                                    "class": "aero::AssetReference"
+                                  },
+                                  "geometryRenderFlags": [
+                                    "fCastShadows"
+                                  ],
+                                  "innerAdjustmentTransform": {
+                                    "fullTransform": "identity",
+                                    "fullTransformFlags": [
+                                      "fResetUniqueMeshTransform"
+                                    ]
+                                  },
+                                  "referenceBoundingBox": {
+                                    "maxPoint": [
+                                      0.259877,
+                                      0.0970797,
+                                      -0.00735701
+                                    ],
+                                    "minPoint": [
+                                      -0.406904,
+                                      -0.277007,
+                                      -1.85352
+                                    ]
+                                  },
+                                  "referenceGeometryContentType": "regular3D"
+                                },
+                                "version": "1.0"
+                              }
+                            ],
+                            "localTransform": {
+                              "position": [
+                                0.0352393,
+                                -0.143116,
+                                0.132785
+                              ],
+                              "rotation": [
+                                90,
+                                0,
+                                0
+                              ],
+                              "scale": [
+                                0.489355,
+                                0.489355,
+                                0.489355
+                              ]
+                            },
+                            "name": "Kevyn"
+                          },
+                          "version": "1.0"
+                        }
+                      ],
+                      "collapsed": true
+                    },
+                    "version": "1.0"
+                  },
+                  "shouldHideWhenAnchorTrackingLost": true
+                },
+                "version": "1.0"
+              }
+            ]
+          },
+          "version": "1.0"
+        }
+      },
+      "version": "1.0"
+    }
+  }
