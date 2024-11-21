@@ -5,27 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="36a5132d-e0b1-4541-b77a-aaf3ccea68a3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/assets/asset.glb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/cara.glb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/cara.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/cara.zft" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/darcy.glb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/darcy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/darcy.zft" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/magnemite/scene.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/magnemite/scene.gltf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/magnemite/textures/blinn2_baseColor.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/marker.patt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/program-anchor 1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/program-anchor.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/pronghorn_statue.fset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/pronghorn_statue.fset3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/pronghorn_statue.iset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/pronghorn_statue.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/pronghorn_statue.zft" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/siobhan.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/siobhan.zft" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/lib/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/lib/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loc.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/loc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/locar.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/locar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/script.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,22 +38,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Node.js.script.js.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Node.js.script.js.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Kevyn\Documents\uLethbridge\Year 4\Applied Studies\FAAR\js" />
@@ -94,6 +78,8 @@
       <workItem from="1731441796181" duration="1789000" />
       <workItem from="1731474334476" duration="19000" />
       <workItem from="1731526808871" duration="2763000" />
+      <workItem from="1731539910082" duration="33000" />
+      <workItem from="1731613620113" duration="150000" />
     </task>
     <servers />
   </component>

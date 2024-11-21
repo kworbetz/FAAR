@@ -37,7 +37,7 @@ locar.on("gpsupdate", (pos, distMoved) => {
     const model = new THREE.GLTFLoader();
     loader.load("assets/Kevyn_2.glb", (gltf) => {
       const model = gltf.scene;
-      model.scale.set(20, 20, 20);
+      model.scale.set(1, 1, 1);
       locar.add(model, pos.coords.longitude, pos.coords.latitude);
     });
 

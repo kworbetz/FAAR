@@ -4,6 +4,8 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+    <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
+    <script src="https://rawgit.com/mayognaise/aframe-gif-component/master/dist/aframe-gif-component.min.js"></script>
     <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
     <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
@@ -19,47 +21,212 @@
       inspector="url: https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js"
       xr-mode-ui="enabled: false;"
       device-orientation-permission-ui="enabled: false;"
+      loading-screen="dotsColor: red; backgroundColor: black"
     >
+      <!--Assets management system-->
       <a-assets>
-        <a-asset-item
-          id="animated-asset"
-          src="assets/Kevyn_2.glb"
-        ></a-asset-item>
-        <a-assets-items id="kevyn" Src="assets/asset.glb"></a-assets-items>
-      </a-assets>
+        <img id="artist-card-puc" src="assets/puc/ArtistCard.png" />
 
+        <img id="artist-card-ellie" src="assets/ellie/ArtistCard.png" />
+        <img id="artist-card-ethan" src="assets/ethan/ArtistCard.png" />
+        <img id="artist-card-seth" src="assets/seth/ArtistCard.png" />
+        <img id="artist-card-kevyn" src="assets/kevyn/ArtistCard.png" />
+        <img id="artist-card-cons" src="assets/constance/ArtistCard.png" />
+
+        <img id="ethanArt01" src="/assets/ethan/WORLDSELECT.png" />
+        <img id="ethanArt02" src="/assets/ethan/WATERONLINE.png" />
+        <img id="ethanArt03" src="/assets/ethan/MINDPAUZ.png" />
+        <img id="ethanArt04" src="/assets/ethan/MERMAID.jpg" />
+        <img id="ethanArt05" src="/assets/ethan/FIRMAMENT.png" />
+        <img id="ethanArt06" src="/assets/ethan/CD.gif" />
+        <img id="ethanArt07" src="/assets/ethan/ANSWER.png" />
+
+        <a-assets-items
+          id="header"
+          gps-entity-place="latitude: 49.679; longitude: -112.86"
+          Src="assets/FAAR Header.glb"
+        ></a-assets-items>
+
+        <audio id="audio" src="assets/upsanddowns.wav" preload="auto"></audio>
+        <video
+          id="video"
+          src="https://faargallery.ca/wp-content/uploads/2024/11/Into-Radius-Clip.mp4"
+          autoplay="true"
+          loop="true"
+        ></video>
+
+        <a-assets-item id="casset" src="assets/seth/Ups-and-Downs.glb " />
+
+        <!--Constance art-->
+        <a-assets-item
+          id="art1"
+          src="assets/constance/Silverhairspiritguard.glb"
+        />
+      </a-assets>
+      <!-------------------------------------------------------------------------------------->
       <a-entity
-        id="kevyn"
+        id="Header"
+        anchored="persistent: true"
         look-at="[gps-camera]"
         animation-mixer="loop: repeat"
-        gltf-model="#kevyn"
+        gltf-model="#header"
+        scale="3 3 3"
+        position="0 0.7 0"
+        rotation="0 46.5 0"
+        gps-entity-place="latitude: 49.67917246132327; longitude: -112.86020135876244;"
+      ></a-entity>
+      <!-------------------------------------------------------------------------------------->
+      <a-entity
+        id="puc"
+        anchored="persistent: true"
+        look-at="[gps-camera]"
+        position="86.85465 -0.08194 80.45216"
+        gps-entity-place="longitude: -112.86020135876244; latitude: 49.67917246132327"
+        rotation="-0.8139308870498795 -132.80847687334074 -9.940236352489623e-17"
+        geometry="depth: 0.07; width: 0.9"
+      >
+        <a-image
+          src="#artist-card-puc"
+          position="0 0 0.03699"
+          scale="0.23875 0.29621 0.23875"
+        ></a-image>
+        <a-entity></a-entity>
+        <a-entity></a-entity>
+        <a-entity></a-entity>
+      </a-entity>
+
+      <a-entity
+        id="ellie"
+        anchored="persistent: true"
+        look-at="[gps-camera]"
         scale="1 1 1"
         position="0 0 0"
         gps-entity-place="latitude: 49.67917246132327; longitude: -112.86020135876244;"
-      ></a-entity>
+        rotation="-0.8139308870498795 -132.80847687334074 -9.940236352489623e-17"
+        geometry="depth: 0.07; width: 0.9"
+      >
+        <a-image
+          src="#artist-card-ellie"
+          position="0 0 0.03699"
+          scale="0.23875 0.29621 0.23875"
+        ></a-image>
+        <a-entity></a-entity>
+        <a-entity></a-entity>
+        <a-entity></a-entity>
+        <a-entity></a-entity>
+      </a-entity>
+
       <a-entity
+        id="ethan"
+        anchored="persistent: true"
         look-at="[gps-camera]"
-        animation-mixer="loop: repeat"
-        gltf-model="#kevyn"
         scale="1 1 1"
         position="0 0 0"
-        gps-entity-place="latitude: 49.679131675437716; longitude: -112.86014771458214;"
-      ></a-entity>
-      <a-entity
-        look-at="[gps-camera]"
-        animation-mixer="loop: repeat"
-        gltf-model="#kevyn"
-        scale="1 1 1"
-        gps-entity-place="latitude: 49.67912907208216; longitude: -112.86012089249199;"
-      ></a-entity>
-      <a-entity
-        look-at="[gps-camera]"
-        animation-mixer="loop: repeat"
-        gltf-model="#kevyn"
-        scale="1 1 1"
-        gps-entity-place="latitude: 49.679102170733216; longitude: -112.86013162132805;"
-      ></a-entity>
+        gps-entity-place="latitude: 49.67917246132327; longitude: -112.86020135876244;"
+        rotation="-0.8139308870498795 -132.80847687334074 -9.940236352489623e-17"
+        geometry="depth: 0.07; width: 0.9"
+      >
+        <a-image
+          src="#artist-card-ethan"
+          position="0 0 0.03699"
+          scale="0.23875 0.29621 0.23875"
+        ></a-image>
+        <a-image
+          src="#ethanArt01"
+          position="0 0 0.03699"
+          scale="0.23875 0.29621 0.23875"
+        ></a-image>
+        <a-image
+          src="#ethanArt02"
+          position="0 0 0.03699"
+          scale="0.23875 0.29621 0.23875"
+        ></a-image>
+        <a-image
+          src="#ethanArt03"
+          position="0 0 0.03699"
+          scale="0.23875 0.29621 0.23875"
+        ></a-image>
+        <a-image
+          src="#ethanArt04"
+          position="0 0 0.03699"
+          scale="0.23875 0.29621 0.23875"
+        ></a-image>
+        <a-image
+          src="#ethanArt05"
+          position="0 0 0.03699"
+          scale="0.23875 0.29621 0.23875"
+        ></a-image>
+        <a-image
+          src="#ethanArt06"
+          position="0 0 0.03699"
+          scale="0.23875 0.29621 0.23875"
+        ></a-image>
+        <a-image
+          src="#ethanArt07"
+          position="0 0 0.03699"
+          scale="0.23875 0.29621 0.23875"
+        ></a-image>
+      </a-entity>
 
+      <a-entity
+        id="seth"
+        anchored="persistent: true"
+        look-at="[gps-camera]"
+        gps-entity-place="longitude: -112.86020135876244; latitude: 49.67917246132327"
+        geometry="depth: 0.07; width: 0.9"
+      >
+        <a-image
+          src="#artist-card-seth"
+          position="0 0 0.03699"
+          scale="0.23875 0.29621 0.23875"
+        ></a-image>
+        <a-video
+          src="#video"
+          gps-entity-place="longitude: -112.86; latitude: 49.679"
+          anchored="persistent: true"
+          scale="0.53146 0.31144 1"
+          position="0.15434 0.29302 0.04443"
+        ></a-video>
+        <a-sound
+          sound="autoplay: false; on: click; src: assets/upsanddowns.wav"
+          autoplay="true"
+          anchored="persistent: true"
+          geometry="primitive: octahedron; skipCache: true"
+          gltf-model="assets/seth/Ups-and-Downs.glb "
+          look-controls-enabled="true"
+          position="-0.23931 -0.38621 0.03692"
+        ></a-sound>
+      </a-entity>
+
+      <a-entity
+        id="constance"
+        anchored="persistent: true"
+        look-at="[gps-camera]"
+        gps-entity-place="longitude: -112.86020135876244; latitude: 49.67917246132327"
+        rotation="-89.99427042206372 0 0"
+        geometry="depth: 0.07; width: 0.9"
+      >
+        <a-image
+          src="#artist-card-cons"
+          position="-0.23678 -0.20193 0.03701"
+          scale="0.23875 0.29621 0.23875"
+        ></a-image>
+        <a-entity
+          gltf-model="assets/constance/Silverhairspiritguard.glb"
+          scale="0.25 0.25 0.25"
+          position="-0.02506 0.09566 0.04325"
+        ></a-entity>
+        <a-entity
+          gltf-model="assets/constance/Silverhairspiritguard.glb"
+          scale="0.25 0.25 0.25"
+          position="-0.3654 0.11894 0.04191"
+        ></a-entity>
+        <a-entity
+          gltf-model="assets/constance/Silverhairspiritguard.glb"
+          scale="0.35182 0.35182 0.35182"
+          position="-0.10117 -0.4591 0.10754"
+        ></a-entity>
+      </a-entity>
       <a-camera gps-camera rotation-reader></a-camera>
     </a-scene>
   </body>
