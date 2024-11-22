@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
     <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
-    <script src="https://rawgit.com/mayognaise/aframe-gif-component/master/dist/aframe-gif-component.min.js"></script>
     <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
     <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
@@ -30,7 +29,6 @@
         <img id="artist-card-ellie" src="assets/ellie/ArtistCard.png" />
         <img id="artist-card-ethan" src="assets/ethan/ArtistCard.png" />
         <img id="artist-card-seth" src="assets/seth/ArtistCard.png" />
-        <img id="artist-card-kevyn" src="assets/kevyn/ArtistCard.png" />
         <img id="artist-card-cons" src="assets/constance/ArtistCard.png" />
 
         <img id="ethanArt01" src="/assets/ethan/WORLDSELECT.png" />
@@ -38,16 +36,25 @@
         <img id="ethanArt03" src="/assets/ethan/MINDPAUZ.png" />
         <img id="ethanArt04" src="/assets/ethan/MERMAID.jpg" />
         <img id="ethanArt05" src="/assets/ethan/FIRMAMENT.png" />
-        <img id="ethanArt06" src="/assets/ethan/CD.gif" />
+        <img id="ethangif01" src="/assets/ethan/CD.gif" />
+        <img id="ethangif02" src="/assets/ethan/ANGELICVESSEL.gif" />
         <img id="ethanArt07" src="/assets/ethan/ANSWER.png" />
 
-        <a-assets-items
-          id="header"
-          gps-entity-place="latitude: 49.679; longitude: -112.86"
-          Src="assets/FAAR Header.glb"
-        ></a-assets-items>
+        <img id="header" src="assets/FAARHeader.png" />
 
-        <audio id="audio" src="assets/upsanddowns.wav" preload="auto"></audio>
+        <img id="ellieart01" src="/assets/ellie/Owl.jpg" />
+        <img id="ellieart02" src="/assets/ellie/Nuit2.jpg" />
+        <img id="ellieart03" src="/assets/ellie/BatRoose.jpg" />
+
+        <img id="pucart01" src="/assets/puc/art01.png" />
+        <img id="pucart02" src="/assets/puc/art02.png" />
+        <img id="pucart03" src="/assets/puc/art03.png" />
+
+        <audio
+          id="audio"
+          src="assets/seth/upsanddowns.mp3"
+          preload="auto"
+        ></audio>
         <video
           id="video"
           src="https://faargallery.ca/wp-content/uploads/2024/11/Into-Radius-Clip.mp4"
@@ -55,7 +62,7 @@
           loop="true"
         ></video>
 
-        <a-assets-item id="casset" src="assets/seth/Ups-and-Downs.glb " />
+        <img id="casset" src="assets/seth/Ups-and-Downs.gif" />
 
         <!--Constance art-->
         <a-assets-item
@@ -63,22 +70,23 @@
           src="assets/constance/Silverhairspiritguard.glb"
         />
       </a-assets>
-      <!-------------------------------------------------------------------------------------->
+      <!-----------------------------assets-items--------------------------------------------------------->
       <a-entity
         id="Gallery"
         gps-entity-place="latitude: 49.67917246132327; longitude: -112.86020135876244;"
+        scale="12 12 12"
         look-at="[gps-camera]"
       >
-        <a-entity
+        <a-image
           id="Header"
           anchored="persistent: true"
           look-at="[gps-camera]"
           animation-mixer="loop: repeat"
-          gltf-model="#header"
-          scale="10 10 0"
-          position="0 0.7 0"
+          src="#header"
+          scale="3 0.5 0"
+          position="0 .9 0"
           rotation="0 46.5 0"
-        ></a-entity>
+        ></a-image>
         <!-------------------------------------------------------------------------------------->
         <a-entity
           id="puc"
@@ -93,9 +101,21 @@
             position="0 0 0.03699"
             scale="0.23875 0.29621 0.23875"
           ></a-image>
-          <a-entity></a-entity>
-          <a-entity></a-entity>
-          <a-entity></a-entity>
+          <a-image
+            src="#pucart01"
+            position="0.30428 0.3362 0.03699"
+            scale="0.19489 0.24179 0.19489"
+          ></a-image>
+          <a-image
+            src="#pucart02"
+            position="0.29209 0.04777 0.03699"
+            scale="0.23875 0.29621 0.23875"
+          ></a-image>
+          <a-image
+            src="#pucart03"
+            position="0.30634 -0.26952 0.03699"
+            scale="0.22799 0.28286 0.22799"
+          ></a-image>
         </a-entity>
 
         <a-entity
@@ -112,10 +132,21 @@
             position="0 0 0.03699"
             scale="0.23875 0.29621 0.23875"
           ></a-image>
-          <a-entity></a-entity>
-          <a-entity></a-entity>
-          <a-entity></a-entity>
-          <a-entity></a-entity>
+          <a-image
+            src="#ellieart01"
+            position="0.30428 0.3362 0.03699"
+            scale="0.19489 0.24179 0.19489"
+          ></a-image>
+          <a-image
+            src="#ellieart02"
+            position="0.29209 0.04777 0.03699"
+            scale="0.23875 0.29621 0.23875"
+          ></a-image>
+          <a-image
+            src="#ellieart03"
+            position="0.30634 -0.26952 0.03699"
+            scale="0.22799 0.28286 0.22799"
+          ></a-image>
         </a-entity>
 
         <a-entity
@@ -157,14 +188,21 @@
             scale="0.18066 0.22414 0.18066"
           ></a-image>
           <a-image
-            src="#ethanArt06"
+            src="#ethangif01"
             position="-0.10413 0.3422 0.03699"
             scale="0.20101 0.24938 0.20101"
+            material="shader:gif;src:url(assets\ethan\CD.gif);"
+            gif=""
           ></a-image>
           <a-image
             src="#ethanArt07"
             position="-0.31877 0.35325 0.03699"
             scale="0.1886 0.234 0.1886"
+          ></a-image>
+          <a-image
+            src="#ethangif02"
+            material="shader:gif;src:url(assets\ethan\CD.gif);"
+            gif=""
           ></a-image>
         </a-entity>
 
@@ -177,7 +215,7 @@
         >
           <a-image
             src="#artist-card-seth"
-            position="0 0 0.03699"
+            position="0.205 -0.060 0.070"
             scale="0.23875 0.29621 0.23875"
           ></a-image>
           <a-video
@@ -187,13 +225,14 @@
             position="0.15434 0.29302 0.04443"
           ></a-video>
           <a-sound
-            sound="autoplay: false; on: click; src: assets/upsanddowns.wav"
-            autoplay="true"
+            sound="src: #audio; autoplay: false; loop: true; volume: 1"
+            on="click"
             anchored="persistent: true"
-            geometry="primitive: octahedron; skipCache: true"
-            gltf-model="assets/seth/Ups-and-Downs.glb "
+            geometry="primitive:plane"
+            material="shader:gif;src:url(assets/seth/Ups-and-Downs.gif);"
             look-controls-enabled="true"
-            position="-0.23931 -0.38621 0.03692"
+            position="-0.230 -0.100 0.03692"
+            scale="0.400 0.300 0.0"
           ></a-sound>
         </a-entity>
 
@@ -226,7 +265,9 @@
             position="-0.10117 -0.4591 0.038"
           ></a-entity> </a-entity
       ></a-entity>
-      <a-camera gps-camera rotation-reader></a-camera>
+      <a-camera gps-camera rotation-reader>
+        <a-cursor></a-cursor>
+      </a-camera>
     </a-scene>
   </body>
 </html>
