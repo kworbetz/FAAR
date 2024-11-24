@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
-    <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
+    <script src="/js/aframe-gif-shader.min.js"></script>
     <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
     <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
@@ -15,7 +15,6 @@
     <a-scene
       renderer="logarithmicDepthBuffer: true;"
       embedded
-      loading-screen="enabled: true;"
       arjs="trackingMethod: best;sourceType: webcam; debugUIEnabled: true;"
       inspector="url: https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js"
       xr-mode-ui="enabled: false;"
@@ -57,9 +56,11 @@
         ></audio>
         <video
           id="video"
-          src="https://faargallery.ca/wp-content/uploads/2024/11/Into-Radius-Clip.mp4"
+          src="/assets/seth/IntotheRadiusTrailer.mp4"
           autoplay="true"
           loop="true"
+          muted="true"
+          crossorigin="anonymous"
         ></video>
 
         <img id="casset" src="assets/seth/Ups-and-Downs.gif" />
@@ -69,18 +70,24 @@
           id="art1"
           src="assets/constance/Silverhairspiritguard.glb"
         />
+        <a-assets-item id="art2" src="assets/constance/Painting2.glb" />
+        <a-assets-item id="art3" src="assets/constance/Painting1.glb" />
+        <!---------------------------------------------------------------------------------------Other---------->
+        <a-assets-item id="Other1" src="assets/other/deeranddog.glb" />
+        <a-assets-item id="Other2" src="assets/other/TreewithFlower.glb" />
+        <a-assets-item id="other3" src="assets/other/WhaleShark.glb" />
       </a-assets>
       <!-----------------------------assets-items--------------------------------------------------------->
       <a-entity
         id="Gallery"
-        gps-entity-place="latitude: 49.67917246132327; longitude: -112.86020135876244;"
+        gps-entity-place="latitude: 0; longitude: -90"
         scale="12 12 12"
-        look-at="[gps-camera]"
+        look-at="[gps-new-camera]"
       >
         <a-image
           id="Header"
           anchored="persistent: true"
-          look-at="[gps-camera]"
+          look-at="[gps-new-camera]"
           animation-mixer="loop: repeat"
           src="#header"
           scale="3 0.5 0"
@@ -91,7 +98,7 @@
         <a-entity
           id="puc"
           anchored="persistent: true"
-          look-at="[gps-camera]"
+          look-at="[gps-new-camera]"
           position="1 0 0"
           rotation="-0.8139308870498795 -132.80847687334074 -9.940236352489623e-17"
           geometry="depth: 0.07; width: 0.9"
@@ -121,7 +128,7 @@
         <a-entity
           id="ellie"
           anchored="persistent: true"
-          look-at="[gps-camera]"
+          look-at="[gps-new-camera]"
           scale="1 1 1"
           position="-1 0 0"
           rotation="-0.8139308870498795 -132.80847687334074 -9.940236352489623e-17"
@@ -152,9 +159,9 @@
         <a-entity
           id="ethan"
           anchored="persistent: true"
-          look-at="[gps-camera]"
+          look-at="[gps-new-camera]"
           position="-2 0 0"
-          rotation="-0.6098557071025027 24.81788887475971 0"
+          rotation="3.5892893386012042e-22 0.00009758005353469294 1.1079195166412271e-11"
           geometry="depth: 0.07; width: 0.9"
         >
           <a-image
@@ -187,30 +194,31 @@
             position="0.10087 0.33923 0.03699"
             scale="0.18066 0.22414 0.18066"
           ></a-image>
-          <a-image
+          <a-entity
             src="#ethangif01"
-            position="-0.10413 0.3422 0.03699"
-            scale="0.20101 0.24938 0.20101"
-            material="shader:gif;src:url(assets\ethan\CD.gif);"
-            gif=""
-          ></a-image>
+            position="0.02536 -0.27209 0.03699"
+            scale="0.25 0.25 1"
+            geometry="primitive: plane"
+            material="shader: gif; src: url(assets\ethan\CD.gif)"
+          ></a-entity>
           <a-image
             src="#ethanArt07"
             position="-0.31877 0.35325 0.03699"
             scale="0.1886 0.234 0.1886"
           ></a-image>
-          <a-image
-            src="#ethangif02"
-            material="shader:gif;src:url(assets\ethan\CD.gif);"
-            gif=""
-          ></a-image>
+          <a-entity
+            position="-0.10413 0.3422 0.03699"
+            scale="0.20101 0.24938 0.20101"
+            geometry="primitive: plane"
+            material="shader: gif; src: url(assets\ethan\ANGELICVESSEL.gif)"
+          ></a-entity>
         </a-entity>
 
         <a-entity
           id="seth"
           position="2 0 0"
           anchored="persistent: true"
-          look-at="[gps-camera]"
+          look-at="[gps-new-camera]"
           geometry="depth: 0.07; width: 0.9"
         >
           <a-image
@@ -237,37 +245,66 @@
         </a-entity>
 
         <a-entity
+          id="Other"
+          anchored="persistent: true"
+          look-at="[gps-new-camera]"
+          position="-3.47807 0.00127 0.0048"
+          rotation="6.196335478937873e-8 0.00014825927989267165 1.6833289792634794e-11"
+          geometry="depth: 0.06; height: 0.99; width: 2.01"
+          scale="1 0.96144 1"
+        >
+          <a-entity
+            gltf-model="assets/other/deeranddog.glb"
+            scale="0.12848 0.35657 0.35657"
+            position="0.0494 -0.23668 0.04788"
+            rotation="0.11287268564077217 91.94482921582373 93.44311385009082"
+          ></a-entity>
+          <a-entity
+            gltf-model="assets/other/TreewithFlower.glb"
+            scale="0.28771 0.28771 0.28771"
+            position="-0.68898 -0.02498 0.02755"
+            rotation="-6.225759401891525 91.09971646800577 90.38523809747763"
+          ></a-entity>
+          <a-entity
+            gltf-model="assets/other/WhaleShark.glb"
+            scale="0.34511 0.2129 0.34511"
+            position="0.13281 0.27435 0.00196"
+            rotation="2.5594024708493874 -90.81552940162086 -89.02618220742731"
+          ></a-entity>
+        </a-entity>
+
+        <a-entity
           id="constance"
           anchored="persistent: true"
-          look-at="[gps-camera]"
-          rotation="-89.99427042206372 0 0"
+          look-at="[gps-new-camera]"
+          rotation="-2.525657442884527e-37 -1.272221872585402e-14 -2.2749099837280628e-21"
           geometry="depth: 0.07; width: 0.9"
-          position="0 0 0"
+          scale="1.01234 1 1"
         >
           <a-image
             src="#artist-card-cons"
-            position="-0.23678 -0.20193 0.03701"
+            position="-0.1756 -0.20193 0.03701"
             scale="0.23875 0.29621 0.23875"
           ></a-image>
           <a-entity
             gltf-model="assets/constance/Silverhairspiritguard.glb"
-            scale="0.25 0.25 0.25"
-            position="-0.02506 0.09566 0.04325"
+            scale="0.29586 0.29586 0.29586"
+            position="0.1176 0.09566 0.04325"
           ></a-entity>
           <a-entity
-            gltf-model="assets/constance/Silverhairspiritguard.glb"
+            gltf-model="assets/constance/Painting1.glb"
             scale="0.25 0.25 0.25"
-            position="-0.3654 0.11894 0.04191"
+            position="-0.08965 0.28575 0.04191"
           ></a-entity>
           <a-entity
-            gltf-model="assets/constance/Silverhairspiritguard.glb"
+            gltf-model="assets/constance/Painting2.glb"
             scale="0.35182 0.35182 0.35182"
-            position="-0.10117 -0.4591 0.038"
-          ></a-entity> </a-entity
-      ></a-entity>
-      <a-camera gps-camera rotation-reader>
-        <a-cursor></a-cursor>
-      </a-camera>
+            position="0.18132 -0.20518 0.04801"
+          ></a-entity>
+        </a-entity>
+        ></a-entity
+      >
+      <a-camera gps-new-camera rotation-reader> </a-camera>
     </a-scene>
   </body>
 </html>

@@ -65,15 +65,13 @@ if (debug) {
 }
 
 window.onload = () => {
-  AFRAME.registerComponent("cursor-listener", {
-    init: function () {
-      var lastIndex = -1;
-      var COLORS = ["red", "green", "blue"];
-      this.el.addEventListener("click", function (evt) {
-        lastIndex = (lastIndex + 1) % COLORS.length;
-        this.setAttribute("material", "color", COLORS[lastIndex]);
-        console.log("I was clicked at: ", evt.detail.intersection.point);
-      });
-    },
+  const scene = document.querySelector("a-scene");
+  const assets = document.querySelector("a-assets");
+
+  assets.addEventListener("loaded", () => {
+    scene.setAttribute("visible", true);
+    document.querySelector(".a-loader-title").style.display = "none";
   });
+
+  scene.setAttribute("visible", false);
 };
