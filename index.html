@@ -100,7 +100,7 @@
         <a-image
           id="Header"
           anchored="persistent: true"
-          look-at="[gps-new-camera]"
+          look-at="[gps-camera]"
           animation-mixer="loop: repeat"
           src="#header"
           scale="3 0.5 0"
@@ -111,7 +111,7 @@
         <a-entity
           id="puc"
           anchored="persistent: true"
-          look-at="[gps-new-camera]"
+          look-at="[gps-camera]"
           position="1 0 0"
           rotation="-0.8139308870498795 -132.80847687334074 -9.940236352489623e-17"
           geometry="depth: 0.07; width: 0.9"
@@ -141,7 +141,7 @@
         <a-entity
           id="ellie"
           anchored="persistent: true"
-          look-at="[gps-new-camera]"
+          look-at="[gps-camera]"
           scale="1 1 1"
           position="-1 0 0"
           rotation="-0.8139308870498795 -132.80847687334074 -9.940236352489623e-17"
@@ -172,7 +172,7 @@
         <a-entity
           id="ethan"
           anchored="persistent: true"
-          look-at="[gps-new-camera]"
+          look-at="[gps-camera]"
           position="-2 0 0"
           rotation="3.5892893386012042e-22 0.00009758005353469294 1.1079195166412271e-11"
           geometry="depth: 0.07; width: 0.9"
@@ -231,7 +231,7 @@
           id="seth"
           position="2 0 0"
           anchored="persistent: true"
-          look-at="[gps-new-camera]"
+          look-at="[gps-camera]"
           geometry="depth: 0.07; width: 0.9"
         >
           <a-image
@@ -290,7 +290,7 @@
         <a-entity
           id="constance"
           anchored="persistent: true"
-          look-at="[gps-new-camera]"
+          look-at="[gps-camera]"
           rotation="-2.525657442884527e-37 -1.272221872585402e-14 -2.2749099837280628e-21"
           geometry="depth: 0.07; width: 0.9"
           scale="1.01234 1 1"
@@ -317,7 +317,7 @@
           ></a-entity>
         </a-entity>
       </a-entity>
-      <a-camera gps-new-camera rotation-reader> </a-camera>
+      <a-camera gps-camera rotation-reader> </a-camera>
     </a-scene>
     <footer>
       <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
