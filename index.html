@@ -3,6 +3,12 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+    <script src="js/aframe-gif-shader.min.js"></script>
+    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+    <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+    <script src="js/script.js"></script>
     <title>FAAR Gallery</title>
   </head>
 
@@ -19,7 +25,7 @@
       <!--Assets management system-->
       <a-assets>
         <img id="artist-card-puc" src="assets/puc/ArtistCard.png" alt="" />
-
+        <img id="artist-card-other" src="assets/other/ArtistCard.png" alt="" />
         <img id="artist-card-ellie" src="assets/ellie/ArtistCard.png" alt="" />
         <img id="artist-card-ethan" src="assets/ethan/ArtistCard.png" alt="" />
         <img id="artist-card-seth" src="assets/seth/ArtistCard.png" alt="" />
@@ -94,19 +100,21 @@
       <!-----------------------------assets-items--------------------------------------------------------->
       <a-entity
         id="Gallery"
-        gps-entity-place="latitude: 49.67917246132327; longitude: -112.86020135876244;"
+        gps-entity-place="longitude: -112.86020135876244; latitude: 49.67917246132327"
         scale="20 20 20"
-        look-at="[gps-new-camera]"
+        rotation="0 90 0"
+        look-at="[gps-camera]"
+        position="-80 0 0"
       >
         <a-image
           id="Header"
           anchored="persistent: true"
           look-at="[gps-camera]"
-          animation-mixer="loop: repeat"
+          animation-mixer=""
           src="#header"
           scale="3 0.5 0"
-          position="0 .9 0"
-          rotation="0 46.5 0"
+          position="0 0.9 0"
+          rotation="5.437234796274218 -6.39375846049919e-15 -6.021171755394565e-16"
         ></a-image>
         <!-------------------------------------------------------------------------------------->
         <a-entity
@@ -140,7 +148,6 @@
         <a-entity
           id="ellie"
           anchored="persistent: true"
-          scale="1 1 1"
           position="-1 0 0"
           geometry="depth: 0.07; width: 0.9"
         >
@@ -231,7 +238,7 @@
         >
           <a-image
             src="#artist-card-seth"
-            position="0.205 -0.060 0.070"
+            position="0.205 -0.06 0.07"
             scale="0.23875 0.29621 0.23875"
           ></a-image>
           <a-video
@@ -242,14 +249,14 @@
             link="href: https://faargallery.ca/wp-content/uploads/2024/11/Into-Radius-Clip.mp4; title: Into the Radius"
           ></a-video>
           <a-sound
-            sound="src: #audio; autoplay: false; loop: true; volume: 1"
+            sound="loop: true; src: assets/seth/upsanddowns.mp3"
             on="click"
             anchored="persistent: true"
-            geometry="primitive:plane"
-            material="shader:gif;src:url(assets/seth/UpsandDowns.gif);"
+            geometry="primitive: plane"
+            material="shader: gif; src: url(assets/seth/UpsandDowns.gif)"
             look-controls-enabled="true"
-            position="-0.230 -0.100 0.03692"
-            scale="0.400 0.300 0.0"
+            position="-0.23 -0.1 0.03692"
+            scale="0.4 0.3 0"
           ></a-sound>
         </a-entity>
 
@@ -262,6 +269,11 @@
           geometry="depth: 0.06; height: 0.99; width: 2.01"
           scale="1 0.96144 1"
         >
+          <a-image
+            src="#artist-card-other"
+            position="0.750 0 0.050"
+            scale="0.23875 0.29621 0.23875"
+          ></a-image>
           <a-entity
             gltf-model="assets/other/deeranddog.glb"
             scale="0.12848 0.35657 0.35657"
@@ -311,15 +323,15 @@
           ></a-entity>
         </a-entity>
       </a-entity>
-      <a-camera gps-camera rotation-reader> </a-camera>
+      <a-entity id="rig" position="25 12 0" rotation="0 25 0">
+        <a-camera
+          gps-camera=""
+          id="camera"
+          look-controls=""
+          data-aframe-inspector-original-camera=""
+        ></a-camera>
+      </a-entity>
     </a-scene>
-    <footer>
-      <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
-      <script src="js/aframe-gif-shader.min.js"></script>
-      <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
-      <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-      <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-      <script src="js/script.js"></script>
-    </footer>
+    <footer></footer>
   </body>
 </html>
