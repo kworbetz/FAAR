@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -18,31 +18,35 @@
     >
       <!--Assets management system-->
       <a-assets>
-        <img id="artist-card-puc" src="assets/puc/ArtistCard.png" />
+        <img id="artist-card-puc" src="assets/puc/ArtistCard.png" alt="" />
 
-        <img id="artist-card-ellie" src="assets/ellie/ArtistCard.png" />
-        <img id="artist-card-ethan" src="assets/ethan/ArtistCard.png" />
-        <img id="artist-card-seth" src="assets/seth/ArtistCard.png" />
-        <img id="artist-card-cons" src="assets/constance/ArtistCard.png" />
+        <img id="artist-card-ellie" src="assets/ellie/ArtistCard.png" alt="" />
+        <img id="artist-card-ethan" src="assets/ethan/ArtistCard.png" alt="" />
+        <img id="artist-card-seth" src="assets/seth/ArtistCard.png" alt="" />
+        <img
+          id="artist-card-cons"
+          src="assets/constance/ArtistCard.png"
+          alt=""
+        />
 
-        <img id="ethanArt01" src="assets/ethan/WORLDSELECT.png" />
-        <img id="ethanArt02" src="assets/ethan/WATERONLINE.png" />
-        <img id="ethanArt03" src="assets/ethan/MINDPAUZ.png" />
-        <img id="ethanArt04" src="assets/ethan/MERMAID.jpg" />
-        <img id="ethanArt05" src="assets/ethan/FIRMAMENT.png" />
-        <img id="ethangif01" src="assets/ethan/CD.gif" />
-        <img id="ethangif02" src="assets/ethan/ANGELICVESSEL.gif" />
-        <img id="ethanArt07" src="assets/ethan/ANSWER.png" />
+        <img id="ethanArt01" src="assets/ethan/WORLDSELECT.png" alt="" />
+        <img id="ethanArt02" src="assets/ethan/WATERONLINE.png" alt="" />
+        <img id="ethanArt03" src="assets/ethan/MINDPAUZ.png" alt="" />
+        <img id="ethanArt04" src="assets/ethan/MERMAID.jpg" alt="" />
+        <img id="ethanArt05" src="assets/ethan/FIRMAMENT.png" alt="" />
+        <img id="ethangif01" src="assets/ethan/CD.gif" alt="" />
+        <img id="ethangif02" src="assets/ethan/ANGELICVESSEL.gif" alt="" />
+        <img id="ethanArt07" src="assets/ethan/ANSWER.png" alt="" />
 
-        <img id="header" src="assets/FAARHeader.png" />
+        <img id="header" src="assets/FAARHeader.png" alt="" />
 
-        <img id="ellieart01" src="assets/ellie/Owl.jpg" />
-        <img id="ellieart02" src="assets/ellie/Nuit2.jpg" />
-        <img id="ellieart03" src="assets/ellie/BatRoose.jpg" />
+        <img id="ellieart01" src="assets/ellie/Owl.jpg" alt="" />
+        <img id="ellieart02" src="assets/ellie/Nuit2.jpg" alt="" />
+        <img id="ellieart03" src="assets/ellie/BatRoose.jpg" alt="" />
 
-        <img id="pucart01" src="assets/puc/art01.png" />
-        <img id="pucart02" src="assets/puc/art02.png" />
-        <img id="pucart03" src="assets/puc/art03.png" />
+        <img id="pucart01" src="assets/puc/art01.png" alt="" />
+        <img id="pucart02" src="assets/puc/art02.png" alt="" />
+        <img id="pucart03" src="assets/puc/art03.png" alt="" />
 
         <audio
           id="audio"
@@ -52,25 +56,39 @@
         <video
           id="video"
           src="assets/seth/IntotheRadiusTrailer.mp4"
-          autoplay="true"
-          loop="true"
-          muted="true"
+          loop="loop"
+          muted="muted"
           crossorigin="anonymous"
         ></video>
 
-        <img id="casset" src="assets/seth/UpsandDowns.gif" />
+        <img id="casset" src="assets/seth/UpsandDowns.gif" alt="" />
 
         <!--Constance art-->
         <a-assets-item
           id="art1"
           src="assets/constance/Silverhairspiritguard.glb"
-        />
-        <a-assets-item id="art2" src="assets/constance/Painting2.glb" />
-        <a-assets-item id="art3" src="assets/constance/Painting1.glb" />
+        ></a-assets-item>
+        <a-assets-item
+          id="art2"
+          src="assets/constance/Painting2.glb"
+        ></a-assets-item>
+        <a-assets-item
+          id="art3"
+          src="assets/constance/Painting1.glb"
+        ></a-assets-item>
         <!---------------------------------------------------------------------------------------Other---------->
-        <a-assets-item id="Other1" src="assets/other/deeranddog.glb" />
-        <a-assets-item id="Other2" src="assets/other/TreewithFlower.glb" />
-        <a-assets-item id="other3" src="assets/other/WhaleShark.glb" />
+        <!-- <a-assets-item
+          id="Other1"
+          src="assets/other/deeranddog.glb"
+        ></a-assets-item>
+        <a-assets-item
+          id="Other2"
+          src="assets/other/TreewithFlower.glb"
+        ></a-assets-item>
+        <a-assets-item
+          id="other3"
+          src="assets/other/WhaleShark.glb"
+        ></a-assets-item> -->
       </a-assets>
       <!-----------------------------assets-items--------------------------------------------------------->
       <a-entity
@@ -226,6 +244,7 @@
             anchored="persistent: true"
             scale="0.53146 0.31144 1"
             position="0.15434 0.29302 0.04443"
+            link="href: https://faargallery.ca/wp-content/uploads/2024/11/Into-Radius-Clip.mp4; title: Into the Radius"
           ></a-video>
           <a-sound
             sound="src: #audio; autoplay: false; loop: true; volume: 1"
@@ -239,7 +258,7 @@
           ></a-sound>
         </a-entity>
 
-        <a-entity
+        <!-- <a-entity
           id="Other"
           anchored="persistent: true"
           look-at="[gps-new-camera]"
@@ -266,7 +285,7 @@
             position="0.13281 0.27435 0.00196"
             rotation="2.5594024708493874 -90.81552940162086 -89.02618220742731"
           ></a-entity>
-        </a-entity>
+        </a-entity> -->
 
         <a-entity
           id="constance"

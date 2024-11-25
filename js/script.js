@@ -1,5 +1,5 @@
 // Get the latitude, longitude, altitude, and angle of the device
-let debug = true;
+let debug = false;
 
 if (debug) {
   document.addEventListener("DOMContentLoaded", () => {
@@ -75,3 +75,11 @@ window.onload = () => {
 
   scene.setAttribute("visible", false);
 };
+
+document.querySelector("video").addEventListener("click", () => {
+  const userConfirmed = confirm("Do you want to visit the link?");
+  if (userConfirmed) {
+    window.location.href =
+      "https://faargallery.ca/wp-content/uploads/2024/11/Into-Radius-Clip.mp4";
+  }
+});
